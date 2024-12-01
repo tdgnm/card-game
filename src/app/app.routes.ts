@@ -5,6 +5,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { GameComponent } from './game/game.component';
 import { ItemsComponent } from './items/items.component';
 import { InfoComponent } from './info/info.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,4 +15,5 @@ export const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: 'items', component: ItemsComponent },
   { path: 'info', component: InfoComponent },
+  { path: '**', component: NotFoundComponent },
 ];
