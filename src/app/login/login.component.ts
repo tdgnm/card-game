@@ -5,6 +5,7 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzCheckboxModule,
     NzFormModule,
     NzInputModule,
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -27,7 +29,6 @@ export class LoginComponent {
     this.validateForm = this.fb.group({
       username: this.fb.control('', [Validators.required]),
       password: this.fb.control('', [Validators.required]),
-      remember: this.fb.control(true)
     });
   }
 

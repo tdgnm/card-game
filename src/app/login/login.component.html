@@ -16,8 +16,8 @@
       </nz-form-control>
     </nz-form-item>
     <div class="buttons">
-      <button nz-button class="login-form-button login-form-margin" nzType="primary">Bejelentkezés</button>
-      <a>Regisztráció</a>
+      <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="validateForm.invalid">Bejelentkezés</button>
+      <a routerLink="/register">Regisztráció</a>
     </div>
   </form>
 </nz-card>
