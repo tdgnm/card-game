@@ -15,6 +15,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { NzTypographyComponent } from 'ng-zorro-antd/typography';
+import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-register',
@@ -29,16 +30,18 @@ import { NzTypographyComponent } from 'ng-zorro-antd/typography';
     RouterLink,
     NgIf,
     NzTypographyComponent,
+    NzIconDirective,
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
   validateForm;
+  passwordVisible = false;
 
   constructor(private fb: NonNullableFormBuilder) {
     this.validateForm = this.fb.group({
-      username: this.fb.control('', [Validators.required]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required, Validators.minLength(8)]),
       confirmPassword: this.fb.control('', [Validators.required, Validators.minLength(8)]),
     }, { validators: this.passwordValidator() });

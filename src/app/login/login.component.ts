@@ -6,6 +6,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { RouterLink } from '@angular/router';
+import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-login',
@@ -18,16 +19,18 @@ import { RouterLink } from '@angular/router';
     NzFormModule,
     NzInputModule,
     RouterLink,
+    NzIconDirective,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   validateForm;
+  passwordVisible = false;
 
   constructor(private fb: NonNullableFormBuilder) {
     this.validateForm = this.fb.group({
-      username: this.fb.control('', [Validators.required]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required]),
     });
   }
