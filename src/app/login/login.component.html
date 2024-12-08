@@ -20,6 +20,9 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
+    <div class="error">
+      <span *ngIf="unauthorizedError" nz-typography nzType="danger">Hibás e-mail cím vagy jelszó!</span>
+    </div>
     <div class="buttons">
       <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="validateForm.invalid">Bejelentkezés</button>
       <a routerLink="/register">Regisztráció</a>

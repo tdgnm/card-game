@@ -16,6 +16,7 @@ import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { NzTypographyComponent } from 'ng-zorro-antd/typography';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +40,7 @@ export class RegisterComponent {
   validateForm;
   passwordVisible = false;
 
-  constructor(private fb: NonNullableFormBuilder) {
+  constructor(private fb: NonNullableFormBuilder, private authService: AuthService) {
     this.validateForm = this.fb.group({
       email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required, Validators.minLength(8)]),
@@ -50,8 +51,11 @@ export class RegisterComponent {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      // TODO: submit
-      console.log('submit', this.validateForm.value);
+      const credentials = {
+        username: this.validateForm.value.email ?? '',
+        password: this.validateForm.value.password ?? '',
+      };
+      this.register(credentials);
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
@@ -76,5 +80,21 @@ export class RegisterComponent {
 
   get passwordError(): boolean {
     return this.validateForm.hasError('mismatch');
+  }
+
+  get unauthorizedError(): boolean {
+    return this.validateForm.hasError('unauthorized');
+  }
+
+  register(credentials: { username: string; password: string }): void {
+    this.authService.register(credentials).subscribe({
+      next: (value) => {
+        console.log(value);
+      },
+      error: (err) => {
+        console.error(err);
+        this.validateForm.setErrors({ unauthorized: true });
+      },
+    });
   }
 }
