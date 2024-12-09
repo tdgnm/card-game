@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { booleanAttribute, Component, Input } from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../_services/user.service';
-import { NgIf } from '@angular/common';
+import { NgIf, Location } from '@angular/common';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
@@ -19,9 +19,20 @@ import { NzIconDirective } from 'ng-zorro-antd/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  constructor(private userService: UserService) { }
+  @Input({
+    alias: 'back',
+    required: false,
+    transform: booleanAttribute,
+  })
+  canGoBack: boolean = false;
+
+  constructor(private userService: UserService, private location: Location) { }
 
   get isLoggedIn(): boolean {
     return this.userService.isLoggedIn;
+  }
+
+  back(): void {
+    this.location.back();
   }
 }

@@ -9,6 +9,23 @@ header {
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 
+  .back {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    height: 5rem;
+    width: 5rem;
+    display: grid;
+    place-items: center;
+
+    button {
+      border-color: transparent;
+      z-index: 10;
+      scale: 110%;
+      margin-inline: unset;
+    }
+  }
+
   button {
     margin-inline: 1rem;
     border-radius: $rounded;

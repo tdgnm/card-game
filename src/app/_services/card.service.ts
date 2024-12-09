@@ -10,6 +10,12 @@ import { BACKEND_URL } from '../../globals';
 export class CardService {
   constructor(private http: HttpClient) { }
 
+  getCard(id: string): Observable<Card> {
+    return this.http.get(`${BACKEND_URL}/cards/${id}`).pipe(
+      map(value => this.objectToCard(value)),
+    );
+  }
+
   getCards(): Observable<Card[]> {
     return this.http.get(`${BACKEND_URL}/cards`).pipe(
       map(value => (value as Array<any>).map(card => this.objectToCard(card))),

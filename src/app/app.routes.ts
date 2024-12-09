@@ -16,12 +16,8 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'game', component: GameComponent },
-  {
-    path: 'cards', component: CardsComponent,
-    children: [
-      { path: ':id', component: CardDetailsComponent },
-    ]
-  },
+  { path: 'cards', component: CardsComponent },
+  { path: 'cards/:id', component: CardDetailsComponent },
   { path: 'info', component: InfoComponent },
   { path: '**', component: NotFoundComponent },
 ];
