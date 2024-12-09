@@ -26,7 +26,11 @@ export class NotFoundComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$),
     ).subscribe({
       next: n => this.progress = 99 - n,
-      complete: () => this.back(),
+      complete: () => {
+        if (this.progress < 1) {
+          this.back();
+        }
+      },
     });
   }
 
