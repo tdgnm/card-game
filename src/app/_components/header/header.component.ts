@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../_services/user.service';
 import { NgIf } from '@angular/common';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
@@ -13,6 +13,7 @@ import { NzIconDirective } from 'ng-zorro-antd/icon';
     RouterLink,
     NgIf,
     NzIconDirective,
+    RouterLinkActive,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

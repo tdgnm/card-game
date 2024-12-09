@@ -16,6 +16,21 @@ export class CardService {
     );
   }
 
+  getCardsFiltered(category: string): Observable<Card[]> {
+    return this.http.get(`${BACKEND_URL}/cards?category=${category}`).pipe(
+      map(value => (value as Array<any>).map(card => this.objectToCard(card))),
+    );
+  }
+
+  getCategories(): Observable<{ category: string, categoryName: string }[]> {
+    return this.http.get(`${BACKEND_URL}/cards`).pipe(
+      map(value => [...new Map((value as Array<any>).map(card => {
+          return [card.category, {category: card.category, categoryName: card.class}]
+        })).values()]
+      ),
+    );
+  }
+
   objectToCard(obj: any): Card {
     const { _id, name, description, cost, rarity, image } = obj;
     const category: string = obj.class;

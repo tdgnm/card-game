@@ -1,9 +1,20 @@
 @use '../../variables' as *;
 
-h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 2rem;
+.top {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  nz-select {
+    width: 20rem;
+    height: 2rem;
+  }
 }
 
 .cards {

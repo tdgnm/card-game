@@ -1,4 +1,10 @@
 <header>
+  <nav>
+    <a routerLink="/cards" routerLinkActive="active">Kártyák</a>
+    <a routerLink="/enemies" routerLinkActive="active">Ellenfelek</a>
+    <a routerLink="/levels" routerLinkActive="active">Szintek</a>
+    <a routerLink="/info" routerLinkActive="active">A játékról</a>
+  </nav>
   <div>
     <button nz-button *ngIf="!isLoggedIn" routerLink="/register" nzSize="large">
       Regisztráció
