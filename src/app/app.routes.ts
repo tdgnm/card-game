@@ -8,6 +8,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { CardsComponent } from './cards/cards.component';
 import { CardDetailsComponent } from './cards/card-details/card-details.component';
+import { EnemiesComponent } from './enemies/enemies.component';
+import { EnemyDetailsComponent } from './enemies/enemy-details/enemy-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +20,8 @@ export const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: 'cards', component: CardsComponent },
   { path: 'cards/:id', component: CardDetailsComponent },
+  { path: 'enemies', component: EnemiesComponent },
+  { path: 'enemies/:id', component: EnemyDetailsComponent },
   { path: 'info', component: InfoComponent },
   { path: '**', component: NotFoundComponent },
 ];
