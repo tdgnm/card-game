@@ -1,0 +1,14 @@
+<header>
+  <div>
+    <button nz-button *ngIf="!isLoggedIn" routerLink="/register" nzSize="large">
+      Regisztráció
+    </button>
+    <button nz-button *ngIf="!isLoggedIn" routerLink="/login" nzType="primary" nzSize="large">
+      Bejelentkezés
+    </button>
+    <button nz-button *ngIf="isLoggedIn" routerLink="/profile" nzType="primary" nzSize="large">
+      <span nz-icon nzType="user"></span>
+      Profil
+    </button>
+  </div>
+</header>

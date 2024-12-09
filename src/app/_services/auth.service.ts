@@ -17,10 +17,14 @@ export class AuthService {
         this.userService.setToken(accessToken);
       }),
       catchError(err => {
-        this.userService.removeToken();
+        this.logout();
         return throwError(() => err);
       }),
     );
+  }
+
+  logout(): void {
+    this.userService.removeToken();
   }
 
   register(credentials: { username: string, password: string }): Observable<any> {

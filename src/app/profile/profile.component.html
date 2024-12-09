@@ -1,1 +1,15 @@
-<p>profile works!</p>
+<header>
+  <div>
+    <button nz-button (click)="logout()" nzDanger nzSize="large">
+      Kijelentkezés
+    </button>
+  </div>
+</header>
+
+<h2>Tárgyak</h2>
+<div class="items">
+  <nz-card *ngFor="let item of items">
+    <h3>{{item.name}}</h3>
+    <span class="description">{{item.description}}</span>
+  </nz-card>
+</div>
