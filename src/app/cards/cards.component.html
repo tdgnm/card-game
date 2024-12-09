@@ -1,0 +1,12 @@
+<app-header></app-header>
+<h2>Kártyák</h2>
+<div class="cards">
+  <nz-card *ngFor="let card of cards">
+    <div class="image" [attr.data-rarity]="card.rarity">
+      <span class="cost">{{card.cost}}</span>
+      <div class="temp-image"></div>
+    </div>
+    <h3>{{card.name}}</h3>
+    <span class="category">{{card.category}}</span>
+  </nz-card>
+</div>

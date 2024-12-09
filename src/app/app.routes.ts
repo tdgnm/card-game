@@ -6,6 +6,7 @@ import { GameComponent } from './game/game.component';
 import { InfoComponent } from './info/info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { CardsComponent } from './cards/cards.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'game', component: GameComponent },
+  { path: 'cards', component: CardsComponent },
   { path: 'info', component: InfoComponent },
   { path: '**', component: NotFoundComponent },
 ];
