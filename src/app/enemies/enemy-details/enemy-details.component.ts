@@ -8,6 +8,7 @@ import { EnemyService } from '../../_services/enemy.service';
 import { Enemy } from '../../_interfaces/enemy';
 import { BackComponent } from '../../_components/back/back.component';
 import { HomeComponent } from '../../_components/home/home.component';
+import { NewGameComponent } from '../../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-enemy-details',
@@ -18,6 +19,7 @@ import { HomeComponent } from '../../_components/home/home.component';
         NzCardComponent,
         BackComponent,
         HomeComponent,
+        NewGameComponent,
     ],
   templateUrl: './enemy-details.component.html',
   styleUrl: './enemy-details.component.scss'

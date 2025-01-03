@@ -8,6 +8,7 @@ import { NgIf } from '@angular/common';
 import { NzCardComponent } from 'ng-zorro-antd/card';
 import { BackComponent } from '../../_components/back/back.component';
 import { HomeComponent } from '../../_components/home/home.component';
+import { NewGameComponent } from '../../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-card-details',
@@ -18,6 +19,7 @@ import { HomeComponent } from '../../_components/home/home.component';
         NzCardComponent,
         BackComponent,
         HomeComponent,
+        NewGameComponent,
     ],
   templateUrl: './card-details.component.html',
   styleUrl: './card-details.component.scss'

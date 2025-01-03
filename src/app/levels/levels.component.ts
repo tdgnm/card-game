@@ -5,6 +5,7 @@ import { Level } from '../_interfaces/level';
 import { LevelService } from '../_services/level.service';
 import { RouterLink } from '@angular/router';
 import { HomeComponent } from '../_components/home/home.component';
+import { NewGameComponent } from '../_components/new-game/new-game.component';
 
 @Component({
   selector: 'app-levels',
@@ -14,6 +15,7 @@ import { HomeComponent } from '../_components/home/home.component';
         NgForOf,
         RouterLink,
         HomeComponent,
+        NewGameComponent,
     ],
   templateUrl: './levels.component.html',
   styleUrl: './levels.component.scss'
