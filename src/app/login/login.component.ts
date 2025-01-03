@@ -11,22 +11,26 @@ import { AuthService } from '../_services/auth.service';
 import { UserService } from '../_services/user.service';
 import { NgIf } from '@angular/common';
 import { NzTypographyComponent } from 'ng-zorro-antd/typography';
+import { BackComponent } from '../_components/back/back.component';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    NzCardComponent,
-    NzButtonModule,
-    NzCheckboxModule,
-    NzFormModule,
-    NzInputModule,
-    RouterLink,
-    NzIconDirective,
-    NgIf,
-    NzTypographyComponent,
-  ],
+    imports: [
+        ReactiveFormsModule,
+        NzCardComponent,
+        NzButtonModule,
+        NzCheckboxModule,
+        NzFormModule,
+        NzInputModule,
+        RouterLink,
+        NzIconDirective,
+        NgIf,
+        NzTypographyComponent,
+        BackComponent,
+        HomeComponent,
+    ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

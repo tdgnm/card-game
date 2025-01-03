@@ -17,22 +17,26 @@ import { NgIf } from '@angular/common';
 import { NzTypographyComponent } from 'ng-zorro-antd/typography';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
 import { AuthService } from '../_services/auth.service';
+import { BackComponent } from '../_components/back/back.component';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    NzCardComponent,
-    NzButtonModule,
-    NzCheckboxModule,
-    NzFormModule,
-    NzInputModule,
-    RouterLink,
-    NgIf,
-    NzTypographyComponent,
-    NzIconDirective,
-  ],
+    imports: [
+        ReactiveFormsModule,
+        NzCardComponent,
+        NzButtonModule,
+        NzCheckboxModule,
+        NzFormModule,
+        NzInputModule,
+        RouterLink,
+        NgIf,
+        NzTypographyComponent,
+        NzIconDirective,
+        BackComponent,
+        HomeComponent,
+    ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })

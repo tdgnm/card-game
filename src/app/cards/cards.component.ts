@@ -7,6 +7,7 @@ import { CardService } from '../_services/card.service';
 import { NzOptionComponent, NzSelectComponent } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-cards',
@@ -19,6 +20,7 @@ import { RouterLink } from '@angular/router';
     NzOptionComponent,
     FormsModule,
     RouterLink,
+    HomeComponent,
   ],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss'

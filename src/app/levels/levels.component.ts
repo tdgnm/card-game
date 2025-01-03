@@ -4,15 +4,17 @@ import { NgForOf } from '@angular/common';
 import { Level } from '../_interfaces/level';
 import { LevelService } from '../_services/level.service';
 import { RouterLink } from '@angular/router';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-levels',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    NgForOf,
-    RouterLink,
-  ],
+    imports: [
+        HeaderComponent,
+        NgForOf,
+        RouterLink,
+        HomeComponent,
+    ],
   templateUrl: './levels.component.html',
   styleUrl: './levels.component.scss'
 })

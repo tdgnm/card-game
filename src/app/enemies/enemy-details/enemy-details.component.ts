@@ -6,15 +6,19 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, throwError } from 'rxjs';
 import { EnemyService } from '../../_services/enemy.service';
 import { Enemy } from '../../_interfaces/enemy';
+import { BackComponent } from '../../_components/back/back.component';
+import { HomeComponent } from '../../_components/home/home.component';
 
 @Component({
   selector: 'app-enemy-details',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    NgIf,
-    NzCardComponent,
-  ],
+    imports: [
+        HeaderComponent,
+        NgIf,
+        NzCardComponent,
+        BackComponent,
+        HomeComponent,
+    ],
   templateUrl: './enemy-details.component.html',
   styleUrl: './enemy-details.component.scss'
 })

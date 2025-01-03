@@ -6,6 +6,7 @@ import { Enemy } from '../_interfaces/enemy';
 import { EnemyService } from '../_services/enemy.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HomeComponent } from '../_components/home/home.component';
 
 @Component({
   selector: 'app-enemies',
@@ -17,6 +18,7 @@ import { RouterLink } from '@angular/router';
     NzSelectComponent,
     FormsModule,
     RouterLink,
+    HomeComponent,
   ],
   templateUrl: './enemies.component.html',
   styleUrl: './enemies.component.scss'
