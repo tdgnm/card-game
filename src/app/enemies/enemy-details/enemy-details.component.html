@@ -2,7 +2,7 @@
 <comp-back></comp-back>
 <comp-header></comp-header>
 <nz-card *ngIf="enemy">
-  <div class="temp-image"></div>
+  <img src="/enemies/{{enemy.image}}" alt="enemy">
   <h2>{{enemy.name}}</h2>
   <p>Kategória: {{enemy.category}}</p>
   <p>Életerő: {{enemy.health}}</p>

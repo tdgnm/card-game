@@ -2,7 +2,7 @@
 <comp-back></comp-back>
 <comp-header></comp-header>
 <nz-card *ngIf="card">
-  <div class="temp-image"></div>
+  <img src="/cards/{{card.image}}" alt="card">
   <h2>{{card.name}}</h2>
   <p>Kategória: {{card.category}}</p>
   <p>Költség: {{card.cost}}</p>

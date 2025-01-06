@@ -11,7 +11,7 @@
   <nz-card *ngFor="let card of cards" [routerLink]="['./', card.id]">
     <div class="image" [attr.data-rarity]="card.rarity">
       <span class="cost">{{card.cost}}</span>
-      <div class="temp-image"></div>
+      <img src="/cards/{{card.image}}" alt="card">
     </div>
     <h3>{{card.name}}</h3>
     <span class="category">{{card.category}}</span>

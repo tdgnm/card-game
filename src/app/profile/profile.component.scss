@@ -40,13 +40,14 @@ p {
     color: white;
     background-color: rgba(255, 255, 255, 0.05);
 
-    .temp-image {
+    img {
       width: 50%;
+      display: block;
       aspect-ratio: 1;
       border-radius: $rounded;
-      background-color: lightgray;
       margin-inline: auto;
       margin-bottom: 1rem;
+      image-rendering: pixelated;
     }
 
     .description {
